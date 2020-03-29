@@ -83,7 +83,7 @@ def main():
 		print(f"\nLive {live}, Die {die}, Eror {err}\nSaved in live.txt")
 
 if __name__ == '__main__':
-	if len(sys.argv) != 2:
+	if len(sys.argv) != 3:
 		print(f"usage: python {sys.argv[0]} <list.txt> <worker>")
 		sys.exit()
 	try:
