@@ -8,7 +8,7 @@ print("""\033[1m
    / __ \/ /_  / __ \  | PhD Checker
   / /_/ / __ \/ / / /  | Pizza hut delivery checker
  / ____/ / / / /_/ /   | Coded by Xractz - \033[31;2mIndo\033[39;2mSec\033[0;1m
-/_/   /_/ /_/_____/    | Format email|password\033[0m
+/_/   /_/ /_/_____/    | Format? input manual\033[0m
 """)
 
 
@@ -54,10 +54,11 @@ def main():
 		jml += 1
 	list.seek(0)
 	print(f"Loaded {jml} accounts from {file}\n")
+	format = input("Format : ")
 	with ThreadPoolExecutor(max_workers=wkr) as e:
 		futures = []
 		for data in list.readlines():
-			data = data.strip().split("|")
+			data = data.strip().split(format)
 			if not data or len(data) != 2:
 				err += 1
 				continue
