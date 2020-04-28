@@ -53,8 +53,10 @@ def main():
 	for x in list.readlines():
 		jml += 1
 	list.seek(0)
-	print(f"Loaded {jml} accounts from {file}\n")
+	print(f"Loaded {jml} accounts from {file}")
 	format = input("Format : ")
+	print()
+	
 	with ThreadPoolExecutor(max_workers=wkr) as e:
 		futures = []
 		for data in list.readlines():
